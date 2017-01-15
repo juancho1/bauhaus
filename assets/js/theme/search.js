@@ -38,9 +38,9 @@ export default class Search extends CatalogPage {
             section: 'product',
         });
 
-        this.$productListingContainer.removeClass('u-hiddenVisually');
-        this.$facetedSearchContainer.removeClass('u-hiddenVisually');
-        this.$contentResultsContainer.addClass('u-hiddenVisually');
+        this.$productListingContainer.removeClass('u-is-srOnly');
+        this.$facetedSearchContainer.removeClass('u-is-srOnly');
+        this.$contentResultsContainer.addClass('u-is-srOnly');
 
         urlUtils.goToUrl(url);
     }
@@ -50,9 +50,9 @@ export default class Search extends CatalogPage {
             section: 'content',
         });
 
-        this.$contentResultsContainer.removeClass('u-hiddenVisually');
-        this.$productListingContainer.addClass('u-hiddenVisually');
-        this.$facetedSearchContainer.addClass('u-hiddenVisually');
+        this.$contentResultsContainer.removeClass('u-is-srOnly');
+        this.$productListingContainer.addClass('u-is-srOnly');
+        this.$facetedSearchContainer.addClass('u-is-srOnly');
 
         urlUtils.goToUrl(url);
     }

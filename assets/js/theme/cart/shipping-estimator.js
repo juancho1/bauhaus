@@ -89,8 +89,8 @@ export default class ShippingEstimator {
 
             event.preventDefault();
 
-            $estimatorFormUps.toggleClass('u-hiddenVisually');
-            $estimatorFormDefault.toggleClass('u-hiddenVisually');
+            $estimatorFormUps.toggleClass('is-srOnly');
+            $estimatorFormDefault.toggleClass('is-srOnly');
         });
     }
 
@@ -164,7 +164,7 @@ export default class ShippingEstimator {
             event.preventDefault();
 
             $(event.currentTarget).hide();
-            $estimatorContainer.removeClass('u-hiddenVisually');
+            $estimatorContainer.removeClass('is-srOnly');
             $('.shipping-estimate-hide').show();
         });
 
@@ -172,7 +172,7 @@ export default class ShippingEstimator {
         $('.shipping-estimate-hide').on('click', (event) => {
             event.preventDefault();
 
-            $estimatorContainer.addClass('u-hiddenVisually');
+            $estimatorContainer.addClass('is-srOnly');
             $('.shipping-estimate-show').show();
             $('.shipping-estimate-hide').hide();
         });

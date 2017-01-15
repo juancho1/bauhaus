@@ -348,7 +348,7 @@ export default class Product {
         // if stock view is on (CP settings)
         if (viewModel.stock.$container.length && _.isNumber(data.stock)) {
             // if the stock container is hidden, show
-            viewModel.stock.$container.removeClass('u-hiddenVisually');
+            viewModel.stock.$container.removeClass('is-srOnly');
 
             viewModel.stock.$input.text(data.stock);
         }
