@@ -226,7 +226,8 @@
 }
 
 .dropdown--quickSearch {
-    background-color: $dropdown--quickSearch-backgroundColor;
+    background-image: url("/assets/img/search-background.jpg");
+    background-size: cover;
     padding: spacing("single") 0;
 
     @include breakpoint("small") {
