@@ -21,17 +21,70 @@
         {{{snippet 'htmlhead'}}}
     </head>
     <body>
-        {{{snippet 'header'}}}
-        <div class="icons-svg-sprite">{{> components/common/icons/icon-defs }}</div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+              var trigger = $('.hamburger'),
+                  overlay = $('.overlay'),
+                  isClosed = false;
 
-        {{#if settings.privacy_cookie}}
-            {{> components/common/cookie}}
-        {{/if}}
+                trigger.click(function () {
+                  hamburger_cross();      
+                });
 
-        {{> components/common/header }}
-        {{> components/common/body }}
-        {{> components/common/footer }}
+                function hamburger_cross() {
+                  if (isClosed == true) {
+                    overlay.hide();
+                    trigger.removeClass('is-open');
+                    trigger.addClass('is-closed');
+                    isClosed = false;
+                  } else {
+                    overlay.show();
+                    trigger.removeClass('is-closed');
+                    trigger.addClass('is-open');
+                    isClosed = true;
+                  }
+              }
+              
+              $('[data-toggle="offcanvas"]').click(function () {
+                  $('#wrapper').toggleClass('toggled');
+              });
+            });
+          </script>
+        <div id="wrapper">
+            <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+                <ul class="nav sidebar-nav">
+                    {{#each categories}}
+                        <li>
+                            {{> components/common/navigation-list}}
+                        </li>
+                    {{/each}}
+                    {{#each pages}}
+                    <li>
+                        <a href="{{url}}">{{name}}</a>
+                    </li>
+                    {{/each}}
+                </ul>
+            </nav>
+            <div id="page-content-wrapper">
+                <button type="button" class="hamburger is-closed animated fadeInLeft" data-toggle="offcanvas">
+                    <span class="hamb-top"></span>
+                    <span class="hamb-middle"></span>
+                    <span class="hamb-bottom"></span>
+                </button>
+                <div class="overlay"></div>
+                {{{snippet 'header'}}}
+                <div class="icons-svg-sprite">{{> components/common/icons/icon-defs }}</div>
 
+                {{#if settings.privacy_cookie}}
+                    {{> components/common/cookie}}
+                {{/if}}
+
+                {{> components/common/header }}
+                {{> components/common/body }}
+                {{> components/common/footer }}
+            </div>
+        </div>
         <script src="{{cdn '/assets/js/bundle.js'}}"></script>
         <script>
             // Exported in app.js
