@@ -29,7 +29,7 @@
                   isClosed = false;
 
                 trigger.click(function () {
-                  hamburger_cross();      
+                  hamburger_cross();
                 });
 
                 function hamburger_cross() {
@@ -37,11 +37,13 @@
                     overlay.hide();
                     trigger.removeClass('is-open');
                     trigger.addClass('is-closed');
+                    $('body').css('overflow', 'auto');
                     isClosed = false;
                   } else {
                     overlay.show();
                     trigger.removeClass('is-closed');
                     trigger.addClass('is-open');
+                     $('body').css('overflow', 'hidden');
                     isClosed = true;
                   }
               }
@@ -54,16 +56,19 @@
         <div id="wrapper">
             <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
                 <ul class="nav sidebar-nav">
+                    <li>
+                        <a class="navList-action" href="{{urls.brands}}">{{lang 'brand.label'}}</a>
+                    </li>
                     {{#each categories}}
                         <li>
                             {{> components/common/navigation-list}}
                         </li>
                     {{/each}}
-                    {{#each pages}}
+                    <!-- {{#each pages}}
                     <li>
                         <a href="{{url}}">{{name}}</a>
                     </li>
-                    {{/each}}
+                    {{/each}} -->
                 </ul>
             </nav>
             <div id="page-content-wrapper">
