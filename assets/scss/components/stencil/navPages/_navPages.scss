@@ -329,6 +329,8 @@
     }
 }
 
+@include breakpoint("medium") {
+
 /*////////////////////////////*/
 /*         VARIABLES          */
 /*////////////////////////////*/
@@ -596,4 +598,11 @@
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 22;
   overflow-x: hidden;
+}
+}
+
+@media(max-width: 768px) {
+    .navbar {
+        display: none !important;
+    }
 }
