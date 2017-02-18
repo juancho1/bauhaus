@@ -10,7 +10,6 @@
 // 5. Needs to be lower than logo zIndex, otherwise, logo is not clickable
 //
 // -----------------------------------------------------------------------------
-
 .navUser {
     @include nav($style: "navBar", $wrapper: "nav");
     @include verticalPositionMiddle("absolute");
@@ -21,11 +20,11 @@
 
     @include breakpoint("medium") {
         padding: 0 spacing("single");
-        position: relative;
         right: auto;
-        top: auto;
+        top: 26px;
         transform: none;
-        z-index: zIndex("high");
+        // z-index: zIndex("low");
+        position: fixed;
     }
 
     .dropdown-menu {
@@ -227,7 +226,9 @@
 
 .dropdown--quickSearch {
     background-image: url("/assets/img/search-background.jpg");
-    background-size: cover;
+    background-size: auto;
+    background-color: white;
+    background-repeat: no-repeat;;
     padding: spacing("single") 0;
 
     @include breakpoint("small") {
@@ -236,6 +237,7 @@
 
     &.is-open {
         // scss-lint:disable ImportantRule
+        top: 74px !important;
         left: 0 !important; // 1
         outline: none;
         right: 0 !important; // 1
