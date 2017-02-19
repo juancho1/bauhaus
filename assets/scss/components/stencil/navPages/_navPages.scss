@@ -419,9 +419,8 @@
   transition: width 0.3s ease-in;
   width: 3px;
   z-index: -1;
-  background-image: url("/assets/img/search-background.jpg");
+  background: #fff url("/assets/img/search-background.jpg") no-repeat;
   background-size: cover;
-  background-repeat: no-repeat;
 }
 
 .sidebar-nav li:hover:before {
