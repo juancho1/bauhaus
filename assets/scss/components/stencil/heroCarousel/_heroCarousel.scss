@@ -16,6 +16,8 @@
 .heroCarousel {
     margin-bottom: (spacing("double") + spacing("single"));
     margin-top: -(spacing("single") + spacing("base"));
+    margin-left: (spacing("single") * 1.3 + spacing("single") * 1.3);
+    margin-right: (spacing("single") * 1.3 + spacing("single") * 1.3);
 
     .js & { // 2
         max-height: remCalc(0);
