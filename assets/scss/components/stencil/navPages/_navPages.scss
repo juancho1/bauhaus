@@ -368,7 +368,7 @@
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   -webkit-transition: all 0.5s ease;
-  background-color: $color-greyDarkest;
+  background-color: #f49dab;
   height: 100%;
   left: 300px;
   margin-left: -300px;
@@ -391,7 +391,7 @@
   height: 100vh;
   z-index: 23;
   font-weight: 700;
-  background-color: $color-greyDarkest;
+  background-color: #f49dab;
 }
 .sidebar-nav li {
   line-height: 60px;
@@ -537,7 +537,6 @@
   background-color: #fff;
   display: none;
   margin-left: 200px;
-  background-color: #cdbe78;
 }
 .hamburger.is-open .hamb-bottom {
   -webkit-transform: rotate(-45deg);
