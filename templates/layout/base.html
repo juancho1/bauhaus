@@ -57,12 +57,16 @@
             <div class="navbar" id="sidebar-wrapper" role="navigation">
                 <ul class="nav sidebar-nav">
                     <li>
-                        <a class="navList-action" href="{{urls.brands}}">{{lang 'brand.label'}}</a>
+                        <section>
+                            <a class="navList-action" href="{{urls.brands}}">{{lang 'brand.label'}}</a>
+                        </section>
                     </li>
                     {{#each categories}}
-                        <li>
-                            {{> components/common/navigation-list}}
-                        </li>
+                        <section>
+                            <li>
+                                {{> components/common/navigation-list}}
+                            </li>
+                        </section>
                     {{/each}}
                     {{#each pages}}
                         <li>
