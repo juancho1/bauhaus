@@ -8,11 +8,11 @@
 $slick-font-path:               "./fonts/";
 $slick-font-family:             inherit;
 $slick-loader-path:             null;
-$slick-arrow-color:             stencilColor("carousel-arrow-color");
-$slick-arrow-bgColor:           rgba(stencilColor("carousel-arrow-bgColor"), 0.9);
-$slick-dot-color:               stencilColor("carousel-dot-color");
-$slick-dot-color-active:        stencilColor("carousel-dot-color-active");
-$slick-dot-bgColor:             rgba(stencilColor("carousel-dot-bgColor"), 0.9);
+$slick-arrow-color:             stencilColor("laura-pink");
+$slick-arrow-bgColor:           rgba(stencilColor("laura-pink"), 0.1);
+$slick-dot-color:               stencilColor("laura-pink");
+$slick-dot-color-active:        stencilColor("laura-pink");
+$slick-dot-bgColor:             rgba(stencilColor("carousel-dot-bgColor"), 0.0);
 $slick-prev-character:          "";
 $slick-next-character:          "";
 $slick-dot-character:           "";

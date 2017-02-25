@@ -193,7 +193,8 @@
     "loadingOverlay-backgroundColor": "#ffffff",
     "pace-progress-backgroundColor": "#989898",
     "spinner-borderColor-dark": "#989898",
-    "spinner-borderColor-light": "#ffffff"
+    "spinner-borderColor-light": "#ffffff",
+    "laura-pink": "#f49dab"
   },
   "resources": {
     "cart": true,
@@ -349,7 +350,8 @@
         "loadingOverlay-backgroundColor": "585858",
         "pace-progress-backgroundColor": "7fc0c2",
         "spinner-borderColor-dark": "737373",
-        "spinner-borderColor-light": "f08383"
+        "spinner-borderColor-light": "f08383",
+        "laura-pink": "#f49dab"
       }
     },
     {
@@ -461,7 +463,8 @@
         "loadingOverlay-backgroundColor": "#ffffff",
         "pace-progress-backgroundColor": "#db8a40",
         "spinner-borderColor-dark": "#db8a40",
-        "spinner-borderColor-light": "#f2eee9"
+        "spinner-borderColor-light": "#f2eee9",
+        "laura-pink": "#f49dab"
       }
     }
   ]
