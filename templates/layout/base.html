@@ -49,22 +49,38 @@
                         hamburger_cross();
                     }
                 });
+                var accordionsMenu = $('.cd-accordion-menu');
+
+                if( accordionsMenu.length > 0 ) {
+                    accordionsMenu.each(function(){
+                        var accordion = $(this);
+                        accordion.on('change', 'input[type="checkbox"]', function(){
+                            var checkbox = $(this);
+                            console.log(checkbox.prop('checked'));
+                            ( checkbox.prop('checked') ) ? checkbox.siblings('ul').attr('style', 'display:none;').slideDown(300) : checkbox.siblings('ul').attr('style', 'display:block;').slideUp(300);
+                        });
+                    });
+                }
             });
           </script>
         <div id="wrapper">
             <div class="navbar" id="sidebar-wrapper" role="navigation">
-                <ul class="nav sidebar-nav">
-                    <li>
-                        <section>
-                            <a class="navList-action" href="{{urls.brands}}">{{lang 'brand.label'}}</a>
-                        </section>
+                <ul class="nav sidebar-nav cd-accordion-menu animated">
+                    <li class="has-children" id="brand-group">
+                        <input type="checkbox" name ="Brands" id="brands">
+                        <label for="brands">DESIGNERS</label>
+                        <ul>
+                            {{#each shop_by_brand}}
+                            <li>
+                                <a href="{{url}}">{{name}}</a>
+                            </li>
+                            {{/each}}
+                        </ul>
                     </li>
                     {{#each categories}}
-                        <section>
-                            <li>
-                                {{> components/common/navigation-list}}
-                            </li>
-                        </section>
+                        <li>
+                            {{> components/common/navigation-list}}
+                        </li>
                     {{/each}}
                     {{#each pages}}
                         <li>

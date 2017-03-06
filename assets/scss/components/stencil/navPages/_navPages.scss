@@ -394,25 +394,30 @@
   background-color: #f49dab;
 }
 .sidebar-nav li {
-  line-height: 60px;
+  line-height: 40px;
   display: inline-block;
-  top: 100px;
   position: relative;
   width: 100%;
   text-align: left;
 }
+#brand-group {
+    font-size: 25px;
+    padding-top: 100px;
+    line-height: 60px;
+}
 .sidebar-nav li:before {
-  content: '';
-  height: 100%;
-  left: 0;
-  top: 0;
-  position: absolute;
-  -webkit-transition: width 0.3s ease-in;
-  transition: width 0.3s ease-in;
-  width: 3px;
-  z-index: -1;
-  background: #fff url("../img/search-background.jpg") no-repeat;
-  background-size: cover;
+  // content: '';
+  // height: 100%;
+  // left: 0;
+  // top: 0;
+  // position: absolute;
+  // -webkit-transition: width 0.3s ease-in;
+  // transition: width 0.3s ease-in;
+  // width: 3px;
+  // z-index: -1;
+  // background: #fff;
+  // // background: #fff url("../img/search-background.jpg") no-repeat;
+  // background-size: cover;
 }
 
 .sidebar-nav li:hover:before {
@@ -421,10 +426,11 @@
   width: 100%;
 }
 .sidebar-nav li a {
-  color: $white;
-  display: block;
-  padding: 10px 15px 10px 100px;
-  text-decoration: none;
+      color: $white;
+      display: block;
+      font-size: 25px;
+      padding: 10px 15px 10px 50px;
+      text-decoration: none;
 }
 .sidebar-nav li.open:hover before {
   -webkit-transition: width 0.3s ease-in;
@@ -443,8 +449,8 @@
 }
 .sidebar-nav > .sidebar-brand {
   font-size: 60px;
-  height: 65px;
-  line-height: 44px;
+  height: 40px;
+  line-height: 30px;
 }
 /*////////////////////////////*/
 /*       Hamburger-Cross      */
@@ -480,7 +486,7 @@
   content: '';
   display: block;
   font-size: 14px;
-  line-height: 32px;
+  line-height: 25px;
   opacity: 0;
   text-align: center;
   width: 100px;
@@ -565,9 +571,123 @@
   opacity: 1;
 }
 }
+/* -------------------------------- 
 
+Main Components 
+
+-------------------------------- */
+
+.cd-accordion-menu ul {
+  /* by default hide all sub menus */
+  display: none;
+}
+.cd-accordion-menu li {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.cd-accordion-menu input[type=checkbox] {
+  /* hide native checkbox */
+  position: absolute;
+  opacity: 0;
+}
+.cd-accordion-menu label, .cd-accordion-menu a {
+  // position: relative;
+  display: block;
+  padding-left: 50px;
+  color: #ffffff;
+  &:hover {
+      color: black;
+  }
+}
+.cd-accordion-menu label::before, .cd-accordion-menu label::after, .cd-accordion-menu a::after {
+  /* icons */
+  content: '';
+  width: 16px;
+  height: 16px;
+  position: absolute;
+}
+.cd-accordion-menu label {
+  cursor: pointer;
+}
+.cd-accordion-menu label::before, .cd-accordion-menu label::after {
+  background-image: url(../img/cd-icons.svg);
+  background-repeat: no-repeat;
+}
+.cd-accordion-menu label::before {
+  /* arrow icon */
+  left: 18px;
+  background-position: 0 0;
+  -webkit-transform: translateY(-50%) rotate(-90deg);
+  -moz-transform: translateY(-50%) rotate(-90deg);
+  -ms-transform: translateY(-50%) rotate(-90deg);
+  -o-transform: translateY(-50%) rotate(-90deg);
+  transform: translateY(-50%) rotate(-90deg);
+}
+
+.cd-accordion-menu input[type=checkbox]:checked + label::before {
+  /* rotate arrow */
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@media only screen and (min-width: 600px) {
+  .cd-accordion-menu label::before {
+    left: 250px;
+    top: 130px;
+    display: inline-block;
+  }
+  .cd-accordion-menu label::after {
+    display:none;
+  }
+  .cd-accordion-menu ul label,
+  .cd-accordion-menu ul a {
+    padding-left: 60px;
+    font-size: 18px;
+  }
+  .cd-accordion-menu ul label::before {
+    left: 48px;
+  }
+  .cd-accordion-menu ul label::after,
+  .cd-accordion-menu ul a::after {
+    left: 77px;
+  }
+  .cd-accordion-menu ul ul label,
+  .cd-accordion-menu ul ul a {
+    padding-left: 130px;
+  }
+  .cd-accordion-menu ul ul label::before {
+    left: 72px;
+  }
+  .cd-accordion-menu ul ul label::after,
+  .cd-accordion-menu ul ul a::after {
+    left: 101px;
+  }
+  .cd-accordion-menu ul ul ul label,
+  .cd-accordion-menu ul ul ul a {
+    padding-left: 154px;
+  }
+  .cd-accordion-menu ul ul ul label::before {
+    left: 96px;
+  }
+  .cd-accordion-menu ul ul ul label::after,
+  .cd-accordion-menu ul ul ul a::after {
+    left: 125px;
+  }
+}
+.cd-accordion-menu.animated label::before {
+  /* this class is used if you're using jquery to animate the accordion */
+  -webkit-transition: -webkit-transform 0.3s;
+  -moz-transition: -moz-transform 0.3s;
+  transition: transform 0.3s;
+}
 @media(max-width: 768px) {
     .navbar {
         display: none !important;
     }
 }
+
