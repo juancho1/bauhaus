@@ -66,9 +66,9 @@
         <div id="wrapper">
             <div class="navbar" id="sidebar-wrapper" role="navigation">
                 <ul class="nav sidebar-nav cd-accordion-menu animated">
-                    <li class="has-children" id="brand-group">
-                        <input type="checkbox" name ="Brands" id="brands">
-                        <label for="brands">DESIGNERS</label>
+                    <li class="has-children side-nav-item">
+                        <input type="checkbox" name ="designers" id="designers">
+                        <label for="designers">Designers</label>
                         <ul>
                             {{#each shop_by_brand}}
                             <li>
@@ -78,13 +78,27 @@
                         </ul>
                     </li>
                     {{#each categories}}
-                        <li>
-                            {{> components/common/navigation-list}}
-                        </li>
+                        {{#if children}}
+                            <li class="has-children side-nav-item">
+                                <input type="checkbox" name="{{name}}" id="{{name}}">
+                                <label for="{{name}}">{{name}}</label>
+                                <ul>
+                                    {{#each children}}
+                                    <li>
+                                        <a href="{{url}}">{{name}}</a>
+                                    </li>
+                                    {{/each}}
+                                </ul>
+                            </li>
+                            {{else}}
+                            <li class="side-nav-item">
+                                <a href="{{url}}">{{name}}</a>
+                            </li>
+                        {{/if}}
                     {{/each}}
                     {{#each pages}}
-                        <li>
-                            <a href="{{url}}">{{name}}</a>
+                        <li class="side-nav-item">
+                            <a href="{{url}}">Play More Haus</a>
                         </li>
                     {{/each}}
                 </ul>
@@ -93,6 +107,7 @@
                 <span class="hamb-top"></span>
                 <span class="hamb-middle"></span>
                 <span class="hamb-bottom"></span>
+                <span class="hamb-bg"></span>
             </button>
             <div id="content-wrapper" data-toggle="contentToggle">
                 {{{snippet 'header'}}}
