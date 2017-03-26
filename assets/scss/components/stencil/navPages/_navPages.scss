@@ -359,7 +359,7 @@
 }
 #wrapper.toggled #sidebar-wrapper {
   width: 300px;
-  height: 100vh;
+  // height: 100vh;
   background-color: $color-greyDarkest;
   overflow: auto !important;
 }
@@ -369,7 +369,7 @@
   -o-transition: all 0.5s ease;
   -webkit-transition: all 0.5s ease;
   background-color: #f49dab;
-  height: 100vh;
+  // height: 100vh;
   left: 300px;
   margin-left: -300px;
   transition: all 0.5s ease;
@@ -536,8 +536,13 @@
 .hamburger.is-open {
     margin-left: 230px;
     top: 30px;
-    -webkit-transition: margin-left 0.5s ease-in-out;
-    transition: margin-left 0.5s ease-in-out;
+    opacity: 1;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+}
+.hamburger.is-closed {
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
 }
 .hamburger.is-open .hamb-top {
   -webkit-transform: rotate(45deg);
