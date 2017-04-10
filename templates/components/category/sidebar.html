@@ -1,13 +1,23 @@
 <nav>
     {{#if categories}}
     <div class="sidebarBlock">
-        <h5 class="sidebarBlock-heading">{{category.name}}</h5>
-        <ul class="navList">
+        <!-- <h5 class="sidebarBlock-heading">{{category.name}}</h5> -->
+        <ul id="navCon" style="display:none" class="navList">
             {{#each categories}}
-            <li class="navList-item">
-                <a class="navList-action" href="{{url}}" alt="{{name}}">{{name}}</a>
-            </li>
+                <li class="navList-item">
+                    <a class="navList-action" href="{{url}}" alt="{{name}}">{{name}}</a>
+                </li>
+                {{#if children}}
+                    {{#each children}}
+                        <li class="navList-item" id={{name}}>
+                            <a class="navList-action" href="{{url}}" alt="{{name}}">{{name}}</a>
+                        </li>
+                    {{/each}}
+                {{/if}}
             {{/each}}
+            <!-- <li class="navList-item">
+                <a class="navList-action" href="{{url}}" alt="{{name}}">{{name}}</a>
+            </li> -->
         </ul>
     </div>
     {{/if}}
@@ -18,3 +28,31 @@
         {{> components/category/shop-by-price shop_by_price=category.shop_by_price category_url=category.url}}
     {{/if}} -->
 </nav>
+<script>
+var page = {{category.name}} || {{head.title}}
+var currPage = page.id;
+var currCat = [];
+{{#each breadcrumbs}}
+    currCat.push('{{name}}');
+{{/each}}
+
+$(document).ready(function () {
+    $('li.navList-item a').each(function(i) {
+        var uriX = $(this).attr('href').split("/").slice(1,-1);
+        var cat = uriX[0].charAt(0).toUpperCase() + uriX[0].slice(1);
+        
+        if(cat === currCat[1] || cat === currCat[0] || currCat[1] === 'Shop All') {
+            $(this).css('display', 'initial');
+            $('#navCon').css('display', 'initial')
+        }else {
+            $(this).css('display', 'none');
+        }
+    })
+});
+</script>
+
+
+
+
+
+
